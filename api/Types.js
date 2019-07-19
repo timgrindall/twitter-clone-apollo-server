@@ -16,7 +16,7 @@ const typeDefs = gql`
 	type Mutation {
 		createTweet(tweet: String, author: String): Tweet
 		deleteTweet(_id: String): Tweet
-		updateTweet(_id: String!, tweet: String!): Tweet
+		updateTweet(_id: String!, tweet: String!, author: String!): Tweet
 	}
 `
 

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://localhost:27017/twitter", {
+mongoose.connect("mongodb://localhost:27017/social-app", {
 	useNewUrlParser: true
 })
 
@@ -32,12 +32,12 @@ module.exports = {
 		return args
 	},
 	updateTweet: args => {
-		const { _id, tweet } = args
+		const { _id, tweet, author } = args
 
 		TweetModel.update(
 			{ _id },
 			{
-				$set: { tweet }
+				$set: { tweet, author }
 			},
 			{ upsert: true },
 			error => {
@@ -47,7 +47,7 @@ module.exports = {
 			}
 		)
 
-		args.author = "User123"
+		// args.author = author // not needed anymore
 
 		return args
 	}

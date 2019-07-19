@@ -1,0 +1,7 @@
+Todo:
+	- implement using real users (not hardcoded values)
+	- implement more detailed schema for including date, & article data in tweets/queries
+	- implement queries and schema for storing and retrieving user information
+	- implement React.js frontend (divide this one up)
+
+	Q: How to setup more routes on app? (use middleware?)
